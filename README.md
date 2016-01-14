@@ -1,2 +1,2 @@
 # koa-robots-static
-静态文件服务器
+koa-robots-static
