@@ -1,6 +1,6 @@
 {
     "name": "koa-robots-static",
-    "version": "0.0.3",
+    "version": "0.0.5",
     "description": "koa-robots-static",
     "author": "寒飞紫",
     "license": "MIT",
@@ -20,7 +20,6 @@
         "babel-plugin-transform-es2015-parameters": "^6.3.13",
         "babel-plugin-transform-es2015-spread": "^6.4.0",
         "koa": "^1.1.2",
-        "should": "8.0.2",
         "supertest": "1.1.0"
     },
     "babel": {
