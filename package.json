@@ -1,42 +1,44 @@
 {
-    "name": "koa-robots-static",
-    "version": "0.0.5",
-    "description": "koa-robots-static",
-    "author": "寒飞紫",
-    "license": "MIT",
-    "engines": {
-        "node": ">=4.2.3"
-    },
-    "main": "./dist/index",
-    "dependencies": {
-        "co-fs": "^1.2.0",
-        "koa-etag": "^2.1.0",
-        "koa-static": "^2.0.0"
-    },
-    "devDependencies": {
-        "babel-core": "^6.4.0",
-        "babel-plugin-transform-es2015-destructuring": "^6.4.0",
-        "babel-plugin-transform-es2015-modules-commonjs": "^6.3.16",
-        "babel-plugin-transform-es2015-parameters": "^6.3.13",
-        "babel-plugin-transform-es2015-spread": "^6.4.0",
-        "koa": "^1.1.2",
-        "supertest": "1.1.0"
-    },
-    "babel": {
-        "plugins": [
-            "transform-es2015-spread",
-            "transform-es2015-parameters",
-            "transform-es2015-destructuring",
-            "transform-es2015-modules-commonjs"
-        ]
-    },
-    "scripts": {
-        "compile": "babel src -d dist",
-        "prepublish": "npm run compile",
-        "test": "npm run compile && mocha --reporter spec --compilers js:babel-core/register"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/koa-robots/koa-robots-static.git"
-    }
+  "name": "koa-robots-static",
+  "version": "0.0.6",
+  "description": "koa-robots-static",
+  "author": "寒飞紫",
+  "license": "MIT",
+  "engines": {
+    "node": ">=4.2.3"
+  },
+  "main": "./dist/index",
+  "dependencies": {
+    "co-fs": "^1.2.0",
+    "koa-etag": "^2.1.0",
+    "koa-static": "^2.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.4.0",
+    "babel-plugin-transform-es2015-destructuring": "^6.4.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.3.16",
+    "babel-plugin-transform-es2015-parameters": "^6.3.13",
+    "babel-plugin-transform-es2015-spread": "^6.4.0",
+    "koa": "^1.1.2",
+    "mocha": "^2.4.5",
+    "supertest": "1.1.0"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-spread",
+      "transform-es2015-parameters",
+      "transform-es2015-destructuring",
+      "transform-es2015-modules-commonjs"
+    ]
+  },
+  "scripts": {
+    "compile": "node_modules/.bin/babel src -d dist",
+    "prepublish": "npm run compile",
+    "test": "npm run compile && node_modules/.bin/mocha --reporter spec --compilers js:babel-core/register"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/koa-robots/koa-robots-static.git"
+  }
 }
