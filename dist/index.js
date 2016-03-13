@@ -20,7 +20,7 @@ exports.default = function () {
 
     serve = (0, _koaStatic2.default)(root, {
         defer: options.defer,
-        index: options.index,
+        index: options.index || false,
         maxage: options.maxage,
         hidden: options.hidden
     });

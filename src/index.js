@@ -15,7 +15,7 @@ export default function (root = '.', options = {}) {
 
     serve = koaStatic(root, {
         defer: options.defer,
-        index: options.index,
+        index: options.index || false,
         maxage: options.maxage,
         hidden: options.hidden
     })

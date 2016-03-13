@@ -40,7 +40,7 @@ exports.default = function () {
                     }
                 } catch (err) {
                     if (~['ENOENT', 'ENAMETOOLONG', 'ENOTDIR'].indexOf(err.code)) {
-                        continue;
+                        return;
                     }
 
                     err.status = 500;

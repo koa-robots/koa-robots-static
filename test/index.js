@@ -204,7 +204,7 @@ describe('koa-static', () => {
                     app.use(serve('test/fixtures'))
 
                     request(app.listen())
-                      .get('/world/')
+                      .get('/world/index.html')
                       .expect(200)
                       .expect('Content-Type', 'text/html; charset=utf-8')
                       .expect('html index', done)
@@ -301,7 +301,7 @@ describe('koa-static', () => {
                     }))
 
                     request(app.listen())
-                      .get('/world/')
+                      .get('/world/index.html')
                       .expect(200)
                       .expect('Content-Type', 'text/html; charset=utf-8')
                       .expect('html index', done)
@@ -432,7 +432,7 @@ describe('combo', () => {
 
             request(app.listen())
               .get('/??js.js?t=1,a.js,b.js?t=3,js.js?t=2')
-              .expect('jsjs', done)
+              .expect(404, done)
         })
 
         it('all files not found', (done) => {
@@ -455,7 +455,7 @@ describe('combo', () => {
             }))
 
             request(app.listen())
-              .get('/&&js.js?t=1,a.js,b.js?t=3,js.js?t=2')
+              .get('/&&js.js?t=1,js.js?t=2')
               .expect('jsjs', done)
         })
 
@@ -467,7 +467,7 @@ describe('combo', () => {
             }))
 
             request(app.listen())
-              .get('/combo&js.js?t=1,a.js,b.js?t=3,js.js?t=2')
+              .get('/combo&js.js?t=1,js.js?t=2')
               .expect('jsjs', done)
         })
     })

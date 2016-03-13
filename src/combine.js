@@ -7,7 +7,7 @@ export default function (root = '.', options = {}) {
 
     return function *combo(next){
         let url = decode(this.url)
-        
+
         if(this.idempotent && url.indexOf(options.identifier) !== -1){
             let result, parts, last_modified
 
@@ -21,7 +21,7 @@ export default function (root = '.', options = {}) {
                 if(!~['.css', '.js'].indexOf(ext(item))){
                     continue
                 }
-
+                
                 try{
                     let stats = yield fs.stat(item)
 
@@ -34,7 +34,7 @@ export default function (root = '.', options = {}) {
                     }
                 }catch(err){
                     if (~['ENOENT', 'ENAMETOOLONG', 'ENOTDIR'].indexOf(err.code)){
-                        continue
+                        return
                     }
 
                     err.status = 500
